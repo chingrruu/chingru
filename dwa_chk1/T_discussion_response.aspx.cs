@@ -13,5 +13,10 @@ namespace dwa_chk1
         {
 
         }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            lblMessage.Text = "Response successfully sent.";
+        }
     }
 }
