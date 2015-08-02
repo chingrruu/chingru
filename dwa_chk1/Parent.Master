@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Parent.master.cs" Inherits="dwa_chk1.Parent" %>
+
+<%@ Register src="ParentMenu.ascx" tagname="ParentMenu" tagprefix="uc1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table align="center" class="auto-style1">
+            <tr>
+                <td id="lnkMainPage">
+                    <asp:HyperLink ID="lnkMainPage" runat="server" Font-Bold="True" Font-Names="Imprint MT Shadow" Font-Size="40px" NavigateUrl="Main.aspx" ForeColor="#009933">NP Tuition Centre</asp:HyperLink>
+                    <br />
+                    <span class="auto-style2">Welcome, 
+                    <asp:Label ID="lblLoginID" runat="server"></asp:Label>
+                    <asp:Label ID="lblDateTime" runat="server"></asp:Label>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <uc1:ParentMenu ID="ParentMenu1" runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center">
+                    <asp:Label ID="lblTotalUsers" runat="server"></asp:Label>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>
+
