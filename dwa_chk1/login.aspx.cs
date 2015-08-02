@@ -19,7 +19,7 @@ namespace dwa_chk1
             string user = Request.Form["user"];
             string pw = "";
 
-            
+
 
             if (loginID == "Admin@gmail.com" && password == "passAdmin" && user == "Admin")
             {
@@ -54,7 +54,7 @@ namespace dwa_chk1
             }
         }
 
-            public static string getParentPass(string loginID)
+        public static string getParentPass(string loginID)
         {
             string pw = "";
 
@@ -66,7 +66,7 @@ namespace dwa_chk1
 
             conn.Open();
             SqlDataReader reader = cmd.ExecuteReader();
-            if(reader.Read())
+            if (reader.Read())
             {
                 pw = reader[0].ToString();
             }
@@ -74,7 +74,7 @@ namespace dwa_chk1
             return pw;
         }
 
-         public static int getParentID(string loginID)
+        public static int getParentID(string loginID)
         {
             int id = 0;
 
@@ -92,10 +92,10 @@ namespace dwa_chk1
             }
             conn.Close();
             return id;
-        
+
         }
     }
-
+}
     
 
             
