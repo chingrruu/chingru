@@ -94,6 +94,15 @@ namespace dwa_chk1 {
         protected global::System.Web.UI.WebControls.TextBox txtSname;
         
         /// <summary>
+        /// rfvSname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSname;
+        
+        /// <summary>
         /// btnBack control.
         /// </summary>
         /// <remarks>
