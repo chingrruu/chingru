@@ -73,10 +73,6 @@
     <Content Include="deregisterclass.aspx" />
     <Content Include="deregisterclass2.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Images\Audrey.jpg" />
-    <Content Include="Images\Chin Chong.jpg" />
-    <Content Include="Images\Dominic.jpg" />
-    <Content Include="Images\Elizabeth.jpg" />
     <Content Include="login.aspx" />
     <Content Include="Parent.Master" />
     <Content Include="ParentMain.aspx" />
