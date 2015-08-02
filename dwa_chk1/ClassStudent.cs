@@ -20,60 +20,58 @@ namespace dwa_chk1
 
         public int add()
         {
-          
-               string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTC"].ToString());
 
-               SqlConnection conn = new SqlConnection(strConn);
+            string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTC"].ToString());
 
-               SqlCommand cmd = new SqlCommand("INSERT INTO CLASSSTUDENT (StudentName, Parentid, TuitionClassid) VALUES(@studentname, @parentid, @tuitionclassid)", conn);
+            SqlConnection conn = new SqlConnection(strConn);
 
-
-
-               cmd.Parameters.AddWithValue("@studentname", StudentName);
-               cmd.Parameters.AddWithValue("@parentid", Parentid);
-               cmd.Parameters.AddWithValue("@tuitionclassid", TuitionClassid);
+            SqlCommand cmd = new SqlCommand("INSERT INTO CLASSSTUDENT (StudentName, Parentid, TuitionClassid) VALUES(@studentname, @parentid, @tuitionclassid)", conn);
 
 
 
-               conn.Open();
-
-               cmd.ExecuteNonQuery();
-
-               conn.Close();
+            cmd.Parameters.AddWithValue("@studentname", StudentName);
+            cmd.Parameters.AddWithValue("@parentid", Parentid);
+            cmd.Parameters.AddWithValue("@tuitionclassid", TuitionClassid);
 
 
-               return 100;
-       
+
+            conn.Open();
+
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+
+
+            return 100;
+
         }
-    
 
-           //ublic int validate()
+
+        //ublic int validate()
         //
-            
 
-          //string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTC"].ToString());
-        
+
+        //string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTC"].ToString());
+
         //  SqlConnection conn = new SqlConnection(strConn);
-        
+
         //  SqlCommand cmd = new SqlCommand("SELECT count(*) From TuitionClass where TuitionClassID = @TuitionClass", conn);
 
-          //SqlDataReader reader = cmd.ExecuteReader();
-          //DataTable dt = new DataTable();
-          //dt.Load(reader);
-          //int numRows = dt.Rows.Count;
+        //SqlDataReader reader = cmd.ExecuteReader();
+        //DataTable dt = new DataTable();
+        //dt.Load(reader);
+        //int numRows = dt.Rows.Count;
 
-          //int rowCount = (int)cmd.ExecuteScalar();
-          //if (rowCount >= 20)
-         // {
-           //   return 0;
-         // }
+        //int rowCount = (int)cmd.ExecuteScalar();
+        //if (rowCount >= 20)
+        // {
+        //   return 0;
+        // }
 
-            return 0;
-            
 
-        }
+
+    }
+}
        
-    
-}
-}
+
 

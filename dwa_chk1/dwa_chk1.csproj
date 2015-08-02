@@ -110,30 +110,35 @@
   <ItemGroup>
     <Compile Include="AdminAddClass.aspx.cs">
       <DependentUpon>AdminAddClass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdminAddClass.aspx.designer.cs">
       <DependentUpon>AdminAddClass.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminAddTutor.aspx.cs">
       <DependentUpon>AdminAddTutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdminAddTutor.aspx.designer.cs">
       <DependentUpon>AdminAddTutor.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminConfirmAddClass.aspx.cs">
       <DependentUpon>AdminConfirmAddClass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdminConfirmAddClass.aspx.designer.cs">
       <DependentUpon>AdminConfirmAddClass.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminConfirmAddTutor.aspx.cs">
       <DependentUpon>AdminConfirmAddTutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdminConfirmAddTutor.aspx.designer.cs">
       <DependentUpon>AdminConfirmAddTutor.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminDeleteClass.aspx.cs">
       <DependentUpon>AdminDeleteClass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdminDeleteClass.aspx.designer.cs">
       <DependentUpon>AdminDeleteClass.aspx</DependentUpon>
@@ -161,6 +166,7 @@
     </Compile>
     <Compile Include="AdminViewClass.aspx.cs">
       <DependentUpon>AdminViewClass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdminViewClass.aspx.designer.cs">
       <DependentUpon>AdminViewClass.aspx</DependentUpon>
@@ -169,6 +175,7 @@
     <Compile Include="ClassStudent.cs" />
     <Compile Include="ConfirmClassRegister.aspx.cs">
       <DependentUpon>ConfirmClassRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ConfirmClassRegister.aspx.designer.cs">
       <DependentUpon>ConfirmClassRegister.aspx</DependentUpon>
@@ -228,6 +235,7 @@
     </Compile>
     <Compile Include="ParentRegister.aspx.cs">
       <DependentUpon>ParentRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ParentRegister.aspx.designer.cs">
       <DependentUpon>ParentRegister.aspx</DependentUpon>
@@ -235,12 +243,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="P_create_discussionTopic.aspx.cs">
       <DependentUpon>P_create_discussionTopic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="P_create_discussionTopic.aspx.designer.cs">
       <DependentUpon>P_create_discussionTopic.aspx</DependentUpon>
     </Compile>
     <Compile Include="P_view_Feedback.aspx.cs">
       <DependentUpon>P_view_Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="P_view_Feedback.aspx.designer.cs">
       <DependentUpon>P_view_Feedback.aspx</DependentUpon>
@@ -277,12 +287,14 @@
     </Compile>
     <Compile Include="T_create_feedback.aspx.cs">
       <DependentUpon>T_create_feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="T_create_feedback.aspx.designer.cs">
       <DependentUpon>T_create_feedback.aspx</DependentUpon>
     </Compile>
     <Compile Include="T_discussion_response.aspx.cs">
       <DependentUpon>T_discussion_response.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="T_discussion_response.aspx.designer.cs">
       <DependentUpon>T_discussion_response.aspx</DependentUpon>
@@ -296,6 +308,7 @@
     </Compile>
     <Compile Include="ViewAvailableClass2.aspx.cs">
       <DependentUpon>ViewAvailableClass2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ViewAvailableClass2.aspx.designer.cs">
       <DependentUpon>ViewAvailableClass2.aspx</DependentUpon>
@@ -330,6 +343,7 @@
     </Compile>
     <Compile Include="ViewRegisteredClass.aspx.cs">
       <DependentUpon>ViewRegisteredClass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ViewRegisteredClass.aspx.designer.cs">
       <DependentUpon>ViewRegisteredClass.aspx</DependentUpon>
