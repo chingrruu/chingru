@@ -22,25 +22,34 @@ namespace dwa_chk1
 
         public int add()
         {
+            // Read connection with NPTCConnectionString
             string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"]);
-            SqlConnection conn = new SqlConnection(strConn);
-            SqlCommand cmd = new SqlCommand("INSERT INTO TuitionClass(TuitionClassID,Suject,Term,StartDate,DayOfWeek,TimeSlot,FreeDayOfWeek,NumSession,Classroom,TutorID) VALUES(@tuitionClassID,@suject,t@erm,@startdate,@dayofweek,@timeslot,@numsession,@classroom,@tutorID)", conn);
 
-            cmd.Parameters.AddWithValue("@tuitionClassID", tuitionClassID);
+            SqlConnection conn = new SqlConnection(strConn);
+
+            SqlCommand cmd = new SqlCommand("INSERT INTO TUITIONCLASS([Subject], Term, StartDate, [DayOfWeek], TimeSlot, Classroom) Values(@subject,@term,@startdate,@dayofweek,@timeslot,@classroom)", conn);
+            // the values for the query are determined during run-time hence we only give
+            // parameters here
+
+            // cmd.Parameters.AddWithValue("@classid", classid);
             cmd.Parameters.AddWithValue("@subject", subject);
             cmd.Parameters.AddWithValue("@term", term);
             cmd.Parameters.AddWithValue("@startdate", startdate);
             cmd.Parameters.AddWithValue("@dayofweek", dayofweek);
             cmd.Parameters.AddWithValue("@timeslot", timeslot);
-            cmd.Parameters.AddWithValue("@numsession", numsession);
             cmd.Parameters.AddWithValue("@classroom", classroom);
-            cmd.Parameters.AddWithValue("@tutorid", tutorid);
 
+            // Open connection to database
             conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
-            return 100;
 
+            // ExecuteNonQuery is used for INSERT, UPDATE, DELETE SQL statements
+            cmd.ExecuteNonQuery();
+
+            // Close connection to database
+            conn.Close();
+
+            // Return 2 when no error occurs
+            return 2;
         }
         public void getTuitionDetails(ref DataSet ds)
         {
@@ -82,6 +91,77 @@ namespace dwa_chk1
             }
 
         }
-        
+
+        public bool isStartDateExists(string startDate)
+        {
+            string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"]);
+
+            SqlConnection conn = new SqlConnection(strConn);
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM TUITIONCLASS WHERE StartDate=@startdate", conn);
+
+            cmd.Parameters.AddWithValue("@startdate", startdate);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            DataSet ds = new DataSet();
+
+            conn.Open();
+            da.Fill(ds, "classdetails");
+            conn.Close();
+
+            if (ds.Tables["classdetails"].Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
+
+        public bool isTimeSlotExists(string timeSlot)
+        {
+            string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"]);
+
+            SqlConnection conn = new SqlConnection(strConn);
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM TUITIONCLASS WHERE TimeSlot=@timeslot", conn);
+
+            cmd.Parameters.AddWithValue("@timeslot", timeslot);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            DataSet ds = new DataSet();
+
+            conn.Open();
+            da.Fill(ds, "classdetailss");
+            conn.Close();
+
+            if (ds.Tables["classdetailss"].Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
+
+        public bool isClassroomExists(string classroom)
+        {
+            string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"]);
+
+            SqlConnection conn = new SqlConnection(strConn);
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM TUITIONCLASS WHERE Classroom=@classroom", conn);
+
+            cmd.Parameters.AddWithValue("@classroom", classroom);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            DataSet ds = new DataSet();
+
+            conn.Open();
+            da.Fill(ds, "classdetailsss");
+            conn.Close();
+
+            if (ds.Tables["classdetailsss"].Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
     }
 }
