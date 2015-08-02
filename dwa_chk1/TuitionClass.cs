@@ -92,76 +92,76 @@ namespace dwa_chk1
 
         }
 
-        public bool isStartDateExists(string startDate)
-        {
-            string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"]);
+        //public bool isStartDateExists(string startDate)
+        //{
+        //    string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"]);
+        //
+        //    SqlConnection conn = new SqlConnection(strConn);
+        //
+        //    SqlCommand cmd = new SqlCommand("SELECT * FROM TUITIONCLASS WHERE StartDate=@startdate", conn);
+        //
+        //    cmd.Parameters.AddWithValue("@startdate", startdate);
+        //
+        //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //
+        //    DataSet ds = new DataSet();
+        //
+        //    conn.Open();
+        //    da.Fill(ds, "classdetails");
+        //    conn.Close();
+        //
+        //    if (ds.Tables["classdetails"].Rows.Count > 0)
+        //        return true;
+        //    else
+        //        return false;
+        //}
 
-            SqlConnection conn = new SqlConnection(strConn);
+        //public bool isTimeSlotExists(string timeSlot)
+        //{
+        //    string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"]);
+        //
+        //    SqlConnection conn = new SqlConnection(strConn);
+        //
+        //    SqlCommand cmd = new SqlCommand("SELECT * FROM TUITIONCLASS WHERE TimeSlot=@timeslot", conn);
+        //
+        //    cmd.Parameters.AddWithValue("@timeslot", timeslot);
+        //
+        //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //
+        //    DataSet ds = new DataSet();
+        //
+        //    conn.Open();
+        //    da.Fill(ds, "classdetailss");
+        //    conn.Close();
+        //
+        //    if (ds.Tables["classdetailss"].Rows.Count > 0)
+        //        return true;
+        //    else
+        //        return false;
+        //}
 
-            SqlCommand cmd = new SqlCommand("SELECT * FROM TUITIONCLASS WHERE StartDate=@startdate", conn);
-
-            cmd.Parameters.AddWithValue("@startdate", startdate);
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-            DataSet ds = new DataSet();
-
-            conn.Open();
-            da.Fill(ds, "classdetails");
-            conn.Close();
-
-            if (ds.Tables["classdetails"].Rows.Count > 0)
-                return true;
-            else
-                return false;
-        }
-
-        public bool isTimeSlotExists(string timeSlot)
-        {
-            string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"]);
-
-            SqlConnection conn = new SqlConnection(strConn);
-
-            SqlCommand cmd = new SqlCommand("SELECT * FROM TUITIONCLASS WHERE TimeSlot=@timeslot", conn);
-
-            cmd.Parameters.AddWithValue("@timeslot", timeslot);
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-            DataSet ds = new DataSet();
-
-            conn.Open();
-            da.Fill(ds, "classdetailss");
-            conn.Close();
-
-            if (ds.Tables["classdetailss"].Rows.Count > 0)
-                return true;
-            else
-                return false;
-        }
-
-        public bool isClassroomExists(string classroom)
-        {
-            string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"]);
-
-            SqlConnection conn = new SqlConnection(strConn);
-
-            SqlCommand cmd = new SqlCommand("SELECT * FROM TUITIONCLASS WHERE Classroom=@classroom", conn);
-
-            cmd.Parameters.AddWithValue("@classroom", classroom);
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-            DataSet ds = new DataSet();
-
-            conn.Open();
-            da.Fill(ds, "classdetailsss");
-            conn.Close();
-
-            if (ds.Tables["classdetailsss"].Rows.Count > 0)
-                return true;
-            else
-                return false;
-        }
+        //public bool isClassroomExists(string classroom)
+        //{
+        //    string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"]);
+        //
+        //    SqlConnection conn = new SqlConnection(strConn);
+        //
+        //    SqlCommand cmd = new SqlCommand("SELECT * FROM TUITIONCLASS WHERE Classroom=@classroom", conn);
+        //
+        //    cmd.Parameters.AddWithValue("@classroom", classroom);
+        //
+        //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //
+        //    DataSet ds = new DataSet();
+        //
+        //    conn.Open();
+        //    da.Fill(ds, "classdetailsss");
+        //    conn.Close();
+        //
+        //    if (ds.Tables["classdetailsss"].Rows.Count > 0)
+        //        return true;
+        //    else
+        //        return false;
+        //}
     }
 }
