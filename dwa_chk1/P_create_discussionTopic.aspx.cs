@@ -20,15 +20,15 @@ namespace dwa_chk1
             {
                 // populate the dropdownlist ddlTutor from the method
 
-                TTutor objTTutor = new TTutor();
+                TutorClass objTutor = new TutorClass();
 
                 DataSet ds = new DataSet();
 
-                int errorcode = objTTutor.getTutorDetails(ref ds);
+                int errorcode = objTutor.getTutorDetails();
 
                 if (errorcode == 0)
                 {
-                    ddlTName.DataSource = ds.Tables["getTutorDetails"];
+                    ddlTName.DataSource = ds.Tables["tutordetails"];
                     ddlTName.DataTextField = "TName";
                     ddlTName.DataBind();
 
@@ -36,66 +36,67 @@ namespace dwa_chk1
                     txtTitle.Text = Request.QueryString["Title"];
                     txtText.Text = Request.QueryString["Text"];
 
-                    // ddlTName.SelectedValue = Request.QueryString["TName"];
-                    // ddlTClass.SelectedValue = Request.QueryString["tuitionClassID"];
+                    ddlTName.SelectedValue = Request.QueryString["TName"];
+                    ddlTClass.SelectedValue = Request.QueryString["tuitionClassID"];
                 }
 
-                TuitionClass objTuitionClass = new TuitionClass();
 
-                DataSet result = new DataSet();
+                    TuitionClass objTuitionClass = new TuitionClass();
 
-                int code = objTuitionClass.getTuitionClassDetails(ref result);
-
-                if (code == 0)
-                {
-                    ddlTClass.DataSource = ds.Tables["getTuitionClassDetails"];
-                    ddlTClass.DataTextField = "tuitionClassID";
-                    ddlTClass.DataBind();
+                    DataSet result = new DataSet();
+                
+                    int code = objTuitionClass.getTuitionDetails(ref DataSet result);
+                
+                    if (code == 0)
+                    {
+                      ddlTClass.DataSource = ds.Tables["tuitionclassdetails"];
+                      ddlTClass.DataTextField = "tuitionClassID";
+                      ddlTClass.DataBind();
               
-                    ddlTName.SelectedValue = Convert.ToString(objTTutor.TName);
-                    ddlTClass.SelectedValue = Convert.ToString(objTuitionClass.tuitionClassID);
+                      ddlTName.SelectedValue = Convert.ToString(objTutor.TName);
+                      ddlTClass.SelectedValue = Convert.ToString(objTuitionClass.tuitionClassID);
                 }
 
-                DiscussionTopic objDiscussionTopic = new DiscussionTopic();
+              //  DiscussionTopic objDiscussionTopic = new DiscussionTopic();
 
-                DataSet ds1 = new DataSet();
+           //     DataSet ds1 = new DataSet();
 
-                int errorcode2 = objDiscussionTopic.getDiscussionTopicDetails(ref ds1);
+             //   int errorcode2 = objDiscussionTopic.getDiscussionTopicDetails(ref ds1);
 
-                if (errorcode2 == 0)
-                {
-                    txtTitle.Text = Request.QueryString["Title"];
-                    txtText.Text = Request.QueryString["Text"];
-                }
+               // if (errorcode2 == 0)
+                //{
+                  //  txtTitle.Text = Request.QueryString["Title"];
+                    // txtText.Text = Request.QueryString["Text"];
+               // }
 
-            }
-        }
+           // }
+       // }
 
-        protected void btnSubmit_Click(object sender, EventArgs e)
-        {
-            if (Page.IsValid)
-            {
+     //   protected void btnSubmit_Click(object sender, EventArgs e)
+       // {
+         //   if (Page.IsValid)
+           // {
                 // Create a new object from ClassStudent Class
-                ClassStudent objClassStudent = new ClassStudent();
-
-                objClassStudent.classStudentID = Convert.ToInt32(txtStudentID.Text);
-                objClassStudent.tuitionClassID = Convert.ToInt32(ddlTClass.SelectedValue);
+             //   ClassStudent objClassStudent = new ClassStudent();
+            
+            //    objClassStudent.classStudentID = Convert.ToInt32(txtStudentID.Text);
+              //  objClassStudent.tuitionClassID = Convert.ToInt32(ddlTClass.SelectedValue);
 
                 // DiscussionTopic Class
-                DiscussionTopic objDiscussionTopic = new DiscussionTopic();
+                // DiscussionTopic objDiscussionTopic = new DiscussionTopic();
 
-                DataSet ds = new DataSet();
+                // DataSet ds = new DataSet();
 
-                int errorcode2 = objDiscussionTopic.createDiscussion(ref ds);
+                //int errorcode2 = objDiscussionTopic.createDiscussion(ref ds);
 
-                if (errorcode2 == 0)
-                {
-                    lblMessage.Text = "Discussion Topic has been successfully submitted.";
-                }
-                else
-                    lblMessage.Text = "All entries and selections must be entered before submission.";
+                //if (errorcode2 == 0)
+                //{
+                  //  lblMessage.Text = "Discussion Topic has been successfully submitted.";
+               // }
+             //   else
+                  //  lblMessage.Text = "All entries and selections must be entered before submission.";
 
             }
         }
-    }
+
 }

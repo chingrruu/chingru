@@ -86,7 +86,7 @@ namespace dwa_chk1
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             conn.Open();
-            da.Fill(ds, "tutordetails");
+            da.Fill(ds, "tuitionClasstutordetails");
             conn.Close();
 
             if (ds.Tables["tutordetails"].Rows.Count > 0)
