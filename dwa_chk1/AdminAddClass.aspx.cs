@@ -84,19 +84,6 @@ namespace dwa_chk1
             {
                 TuitionClass objClass = new TuitionClass();
 
-                if (objClass.isStartDateExists(txtStartDate.Text) == true)
-                {
-                    if (objClass.isTimeSlotExists(ddlTimeSlot.SelectedValue) == true)
-                    {
-                        if (objClass.isClassroomExists(ddlClassroom.SelectedValue))
-                        {
-                            lblError.Text = "Error!";
-                        }
-                    }
-                }
-
-                else
-                {
                     // Combine details together
                     string strValues;
 
@@ -118,7 +105,6 @@ namespace dwa_chk1
 
                     // Redirect the querystring to another page
                     Response.Redirect("AdminConfirmAddClass.aspx?" + strValues);
-                }
             }
         }
 

@@ -25,6 +25,13 @@
         .auto-style10 {
             height: 48px;
         }
+        .auto-style11 {
+            width: 200px;
+            height: 30px;
+        }
+        .auto-style12 {
+            height: 30px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -81,9 +88,10 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style5">Student Name</td>
-            <td>
+            <td class="auto-style11">Student Name</td>
+            <td class="auto-style12">
                 <asp:TextBox ID="txtSname" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvSname" runat="server" ControlToValidate="txtSname" Display="Dynamic" ErrorMessage="Please enter student name" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -95,7 +103,6 @@
                 <br />
                 <asp:Label ID="lblMessage" runat="server"></asp:Label>
                 <br />
-                <asp:Label ID="lblMessage3" runat="server"></asp:Label>
             </td>
         </tr>
     </table>

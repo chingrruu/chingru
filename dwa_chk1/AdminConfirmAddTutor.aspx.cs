@@ -46,16 +46,16 @@ namespace dwa_chk1
             if (Page.IsValid)
             {
                 // Create a new object from the Tutor Class
-                Tutor objTutor = new Tutor();
+                TutorClass objTutor = new TutorClass();
 
                 // Pass details to Tutor objects with necessary conversion if needed
                 // objTutor.tutorid = Convert.ToInt32(lblTutorID.Text);
                 objTutor.salutation = lblSalutation.Text;
                 objTutor.name = lblName.Text;
-                objTutor.contactnumber = Convert.ToInt32(lblContactNumber.Text);
-                objTutor.emailaddress = lblEmailAddress.Text;
+                objTutor.telno = Convert.ToInt32(lblContactNumber.Text);
+                objTutor.email = lblEmailAddress.Text;
                 // objTutor.password = lblPassword.Text;
-                objTutor.yearsofexperience = Convert.ToInt32(lblYearsOfExperience.Text);
+                objTutor.experience = Convert.ToInt32(lblYearsOfExperience.Text);
 
                 // Call method to add 
                 int error = objTutor.add();

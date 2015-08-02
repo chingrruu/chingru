@@ -17,7 +17,7 @@ namespace dwa_chk1
         protected void btnYes_Click(object sender, EventArgs e)
         {
             TuitionClass objClass = new TuitionClass();
-            objClass.classid = Convert.ToInt32(Request.QueryString["cid"]);
+            objClass.tuitionClassID = Convert.ToInt32(Request.QueryString["cid"]);
             int errorcode = objClass.delete();
 
             if (errorcode == 1)
