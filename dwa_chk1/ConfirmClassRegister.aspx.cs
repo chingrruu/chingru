@@ -64,6 +64,7 @@ namespace dwa_chk1
             cmd.Parameters.AddWithValue("@studentname", txtSname.Text);
 
             lblMessage.Text = "Successfully Register Class";
+            lblMessage3.Text = "Please wait while we redirect you to view your registered class details";
 
             conn.Open();
             cmd.ExecuteNonQuery();
