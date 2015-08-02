@@ -8,7 +8,8 @@
             <asp:MenuItem NavigateUrl="~/viewclasstakenbytutor.aspx" Text="View Attendance" Value="View Attendance"></asp:MenuItem>
         </asp:MenuItem>
         <asp:MenuItem Text="- View Student Progress Report" Value="- View Student Progress Repor"></asp:MenuItem>
-        <asp:MenuItem Text="- Discussion Topic" Value="- Discussion Topic"></asp:MenuItem>
+        <asp:MenuItem Text="- Create Feedback" Value="- Create Feedback" NavigateUrl="~/T_create_feedback.aspx"></asp:MenuItem>
+        <asp:MenuItem NavigateUrl="~/T_discussion_response.aspx" Text="- Discussion Topic" Value="- Discussion Topic"></asp:MenuItem>
         <asp:MenuItem NavigateUrl="~/deregisterclass.aspx" Text="- Deregister" Value="- Deregister"></asp:MenuItem>
     </Items>
 </asp:Menu>
