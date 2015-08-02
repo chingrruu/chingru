@@ -19,8 +19,7 @@ namespace dwa_chk1
             string user = Request.Form["user"];
             string pw = "";
 
-            pw = getParentPass(loginID);
-            int id = getParentID(loginID);
+            
 
             if (loginID == "Admin@gmail.com" && password == "passAdmin" && user == "Admin")
             {
@@ -36,7 +35,11 @@ namespace dwa_chk1
 
                 Response.Redirect("TutorMain.aspx");
             }
-            if (password == pw && userType == "Parent")
+
+            pw = getParentPass(loginID);
+            int id = getParentID(loginID);
+
+            if (password == pw && user == "Parent")
             {
                 Session["LoginID"] = loginID;
                 Session["ParentID"] = id;
