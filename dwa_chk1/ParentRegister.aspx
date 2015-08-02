@@ -90,13 +90,13 @@
             <td>
                 <asp:TextBox ID="txtPassword" runat="server" Width="127px" TextMode="Password"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtPassword" Display="Dynamic" ErrorMessage="Please enter a password" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:CompareValidator ID="covPassword" runat="server" ControlToCompare="txtConfirmPassword" ControlToValidate="txtPassword" Display="Dynamic" ErrorMessage="Please enter the correct password!" ForeColor="Red"></asp:CompareValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style7">Confirm Password</td>
             <td class="auto-style8">
                 <asp:TextBox ID="txtConfirmPassword" runat="server" style="width: 128px" TextMode="Password"></asp:TextBox>
-                <asp:CompareValidator ID="covConfirmPassword" runat="server" ControlToValidate="txtConfirmPassword" Display="Dynamic" ErrorMessage="Please enter the correct password" ForeColor="Red" Operator="DataTypeCheck"></asp:CompareValidator>
             </td>
         </tr>
         <tr>
