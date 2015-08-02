@@ -15,31 +15,31 @@ namespace dwa_chk1
         protected void Page_Load(object sender, EventArgs e)
         {
             // populating ddlStudentID
-                ClassStudent objClassStudent = new ClassStudent();
-                objClassStudent.parentID = 1; //=Session["ParentID"]
-                System.Data.DataSet ds = new System.Data.DataSet();
+              if(!Page.IsPostBack)
+              {
+                  populateddl();
+                  if (ddlStudentID.Items.Count > 0)
+                      viewFeedback();
+              }
+        }
 
-                int errorcode = objClassStudent.getFeedbackDetails(ref ds);
+        public void populateddl()
+        {
+            string strConn = ConfigurationManager.ConnectionStrings["NPTCConnectionString"].ToString();
+            SqlConnection conn = new SqlConnection(strConn);
 
-                if (errorcode == 0)
-                {
-                    ddlStudentID.DataSource = ds.Tables["FeedbackDetails"];
-                    ddlStudentID.DataValueField = "ClassStudentID"; // to choose specific column for data retrieved
-                    ddlStudentID.DataBind();
+            SqlCommand cmd = new SqlCommand("SELECT ClassStudentID, StudentName, TuitionClassID, Feedback FROM ClassStudent INNER JOIN Parent ON ClassStudent.ParentID = Parent.ParentID WHERE ClassStudent.ParentID=@parentID", conn);
+            cmd.Parameters.AddWithValue("@parentID", 1); // Session["parentID"]
 
-                    gvFeedback.DataSource = ds.Tables["getClassStudentDetails"];
-                    gvFeedback.DataBind();
-                }
-                
-                if (ds.Tables["FeedbackDetails"].Rows.Count > 0)
-                {
-                    lblMessage.Text = " There is a total number of:" + ds.Tables["Staff"].Rows.Count + " records.";
-                }
-                else
-                {
-                    lblMessage.Text = "There are no records to display";
-                }
-            }
+            SqlDataReader reader;
+
+            conn.Open();
+                 reader = cmd.ExecuteReader();
+                 while (reader.Read())
+                 {
+                     ddlStudentID.Items.Add(reader["ClassStudentID"].ToString());
+                 }
+            conn.Close();
         }
 
         public void viewFeedback()
@@ -78,6 +78,11 @@ namespace dwa_chk1
         {
 
         }
+
+        protected void ddlStudentID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            viewFeedback();
         }
+  
     }
 }
