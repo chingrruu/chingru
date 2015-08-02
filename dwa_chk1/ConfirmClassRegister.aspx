@@ -103,6 +103,8 @@
                 <br />
                 <asp:Label ID="lblMessage" runat="server"></asp:Label>
                 <br />
+                <asp:Label ID="lblMessage3" runat="server"></asp:Label>
+                <br />
             </td>
         </tr>
     </table>
