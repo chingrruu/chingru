@@ -48,31 +48,33 @@
         <tr>
             <td class="auto-style30">Name of Student</td>
             <td class="auto-style21">
-                <asp:Label ID="lblStudentName" runat="server"></asp:Label>
+                <asp:DropDownList ID="ddlSName" runat="server">
+                </asp:DropDownList>
             </td>
         </tr>
         <tr>
             <td class="auto-style31">Name of Parent</td>
             <td class="auto-style15">
-                <asp:Label ID="lblParentName" runat="server"></asp:Label>
+                <asp:Label ID="lblPName" runat="server" Text="Label"></asp:Label>
             </td>
         </tr>
         <tr>
             <td class="auto-style31">Class </td>
             <td>
-                <asp:Label ID="lblClass" runat="server"></asp:Label>
+                <asp:DropDownList ID="ddlTClass" runat="server">
+                </asp:DropDownList>
             </td>
         </tr>
         <tr>
-            <td class="auto-style31">Topic</td>
+            <td class="auto-style31">Discussion Title</td>
             <td>
-                <asp:Label ID="lblTopic" runat="server"></asp:Label>
+                <asp:TextBox ID="txtTitle" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
-            <td class="auto-style31">&nbsp;</td>
+            <td class="auto-style31">Discussion Text</td>
             <td>
-                <asp:Label ID="lblMessage2" runat="server"></asp:Label>
+                <asp:TextBox ID="txtText" runat="server" Height="118px" Width="250px"></asp:TextBox>
             </td>
         </tr>
         <tr>
