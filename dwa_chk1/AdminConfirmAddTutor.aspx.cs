@@ -52,7 +52,7 @@ namespace dwa_chk1
                 // objTutor.tutorid = Convert.ToInt32(lblTutorID.Text);
                 objTutor.salutation = lblSalutation.Text;
                 objTutor.name = lblName.Text;
-                objTutor.telno = Convert.ToInt32(lblContactNumber.Text);
+                objTutor.telno = lblContactNumber.Text;
                 objTutor.email = lblEmailAddress.Text;
                 // objTutor.password = lblPassword.Text;
                 objTutor.experience = Convert.ToInt32(lblYearsOfExperience.Text);
