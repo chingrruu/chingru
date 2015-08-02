@@ -163,5 +163,10 @@ namespace dwa_chk1
             else
                 return false;
         }
+
+        internal int getTuitionDetails()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

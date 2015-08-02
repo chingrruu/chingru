@@ -13,49 +13,49 @@ namespace dwa_chk1 {
     public partial class T_discussion_response {
         
         /// <summary>
-        /// lblStudentName control.
+        /// ddlSName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStudentName;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSName;
         
         /// <summary>
-        /// lblParentName control.
+        /// lblPName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblParentName;
+        protected global::System.Web.UI.WebControls.Label lblPName;
         
         /// <summary>
-        /// lblClass control.
+        /// ddlTClass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblClass;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTClass;
         
         /// <summary>
-        /// lblTopic control.
+        /// txtTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTopic;
+        protected global::System.Web.UI.WebControls.TextBox txtTitle;
         
         /// <summary>
-        /// lblMessage2 control.
+        /// txtText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage2;
+        protected global::System.Web.UI.WebControls.TextBox txtText;
         
         /// <summary>
         /// txtResponse control.

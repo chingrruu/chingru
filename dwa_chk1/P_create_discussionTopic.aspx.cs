@@ -41,62 +41,61 @@ namespace dwa_chk1
                 }
 
 
-                    TuitionClass objTuitionClass = new TuitionClass();
+                TuitionClass objTuitionClass = new TuitionClass();
 
-                    DataSet result = new DataSet();
-                
-                    int code = objTuitionClass.getTuitionDetails(ref DataSet result);
-                
-                    if (code == 0)
-                    {
-                      ddlTClass.DataSource = ds.Tables["tuitionclassdetails"];
-                      ddlTClass.DataTextField = "tuitionClassID";
-                      ddlTClass.DataBind();
-              
-                      ddlTName.SelectedValue = Convert.ToString(objTutor.TName);
-                      ddlTClass.SelectedValue = Convert.ToString(objTuitionClass.tuitionClassID);
+                DataSet result = new DataSet();
+
+                int code = objTuitionClass.getTuitionDetails();
+
+                if (code == 0)
+                {
+                    ddlTClass.DataSource = ds.Tables["tuitionclassdetails"];
+                    ddlTClass.DataTextField = "tuitionClassID";
+                    ddlTClass.DataBind();
+
+                    ddlTName.SelectedValue = Convert.ToString(objTutor.TName);
+                    ddlTClass.SelectedValue = Convert.ToString(objTuitionClass.tuitionClassID);
                 }
 
-              //  DiscussionTopic objDiscussionTopic = new DiscussionTopic();
+                DiscussionTopic objDiscussionTopic = new DiscussionTopic();
 
-           //     DataSet ds1 = new DataSet();
+                DataSet ds1 = new DataSet();
 
-             //   int errorcode2 = objDiscussionTopic.getDiscussionTopicDetails(ref ds1);
+                int errorcode2 = objDiscussionTopic.getDiscussionTopicDetails(ref ds1);
 
-               // if (errorcode2 == 0)
-                //{
-                  //  txtTitle.Text = Request.QueryString["Title"];
-                    // txtText.Text = Request.QueryString["Text"];
-               // }
+                if (errorcode2 == 0)
+                {
+                    txtTitle.Text = Request.QueryString["Title"];
+                    txtText.Text = Request.QueryString["Text"];
+                }
+            }
 
-           // }
-       // }
-
-     //   protected void btnSubmit_Click(object sender, EventArgs e)
-       // {
-         //   if (Page.IsValid)
-           // {
-                // Create a new object from ClassStudent Class
-             //   ClassStudent objClassStudent = new ClassStudent();
+        protected void btnSubmit_Click(object sender, EventArgs e)
+          {
+              if (Page.IsValid)
+              {
+                Create a new object from ClassStudent Class
+                ClassStudent objClassStudent = new ClassStudent();
             
-            //    objClassStudent.classStudentID = Convert.ToInt32(txtStudentID.Text);
-              //  objClassStudent.tuitionClassID = Convert.ToInt32(ddlTClass.SelectedValue);
+                objClassStudent.classStudentID = Convert.ToInt32(txtStudentID.Text);
+                objClassStudent.tuitionClassID = Convert.ToInt32(ddlTClass.SelectedValue);
 
-                // DiscussionTopic Class
-                // DiscussionTopic objDiscussionTopic = new DiscussionTopic();
+                DiscussionTopic Class
+                DiscussionTopic objDiscussionTopic = new DiscussionTopic();
 
-                // DataSet ds = new DataSet();
+                DataSet ds = new DataSet();
 
-                //int errorcode2 = objDiscussionTopic.createDiscussion(ref ds);
+                int errorcode2 = objDiscussionTopic.createDiscussion(ref ds);
 
-                //if (errorcode2 == 0)
-                //{
-                  //  lblMessage.Text = "Discussion Topic has been successfully submitted.";
-               // }
-             //   else
-                  //  lblMessage.Text = "All entries and selections must be entered before submission.";
+                if (errorcode2 == 0)
+                {
+                    lblMessage.Text = "Discussion Topic has been successfully submitted.";
+               }
+               else
+                   lblMessage.Text = "All entries and selections must be entered before submission.";
 
             }
         }
-
+    }
 }
+
