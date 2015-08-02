@@ -17,6 +17,11 @@ namespace dwa_chk1
             string loginID = Request.Form["LoginID"];
             string password = Request.Form["password"];
             string user = Request.Form["user"];
+            string pw = "";
+
+            pw = getParentPass(loginID);
+            int id = getParentID(loginID);
+
             if (loginID == "Admin@gmail.com" && password == "passAdmin" && user == "Admin")
             {
                 Session["LoginID"] = loginID;
@@ -31,13 +36,60 @@ namespace dwa_chk1
 
                 Response.Redirect("TutorMain.aspx");
             }
-            if (loginID == "john.tan@gmail.com" && password == "john1234" && user == "Parent")
+            if (password == pw && userType == "Parent")
             {
                 Session["LoginID"] = loginID;
+                Session["ParentID"] = id;
                 Session["DT"] = DateTime.Now;
 
                 Response.Redirect("ParentMain.aspx");
             }
+            else
+            {
+                lblError.Text = "Invalid Login Credentials!";
+
+            }
+        }
+
+            public static string getParentPass(string loginID)
+        {
+            string pw = "";
+
+            string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTC"]);
+
+            SqlConnection conn = new SqlConnection(strConn);
+
+            SqlCommand cmd = new SqlCommand("SELECT PPassword from Parent WHERE PEmailAddr='" + loginID + "' ", conn);
+
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if(reader.Read())
+            {
+                pw = reader[0].ToString();
+            }
+            conn.Close();
+            return pw;
+        }
+
+         public static int getParentID(string loginID)
+        {
+            int id = 0;
+
+            string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTC"]);
+
+            SqlConnection conn = new SqlConnection(strConn);
+
+            SqlCommand cmd = new SqlCommand("SELECT ParentID from Parent WHERE PEmailAddr='" + loginID + "' ", conn);
+
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                id = Convert.ToInt32(reader[0].ToString());
+            }
+            conn.Close();
+            return id;
+        
         }
     }
 }
