@@ -25,6 +25,7 @@
         .auto-style21 {
             width: 260px;
             height: 19px;
+            margin-left: 40px;
         }
         .auto-style31 {
             width: 100px;
@@ -46,41 +47,6 @@
             <td class="auto-style32" colspan="2"><strong>Create Response</strong></td>
         </tr>
         <tr>
-            <td class="auto-style30">Name of Student</td>
-            <td class="auto-style21">
-                <asp:DropDownList ID="ddlSName" runat="server">
-                </asp:DropDownList>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style31">Name of Parent</td>
-            <td class="auto-style15">
-                <asp:Label ID="lblPName" runat="server" Text="Label"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style31">Class </td>
-            <td>
-                <asp:DropDownList ID="ddlTClass" runat="server">
-                </asp:DropDownList>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style31">Discussion Title</td>
-            <td>
-                <asp:TextBox ID="txtTitle" runat="server"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style31">Discussion Text</td>
-            <td>
-                <asp:TextBox ID="txtText" runat="server" Height="118px" Width="250px"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">&nbsp;</td>
-        </tr>
-        <tr>
             <td colspan="2"><em>Please enter your response below:</em></td>
         </tr>
         <tr>
@@ -91,10 +57,10 @@
         <tr>
             <td class="auto-style31">
                 <asp:Button ID="btnSubmit" runat="server" Text="Submit" Width="100px" OnClick="btnSubmit_Click" />
-            </td>
-            <td>
                 <asp:Label ID="lblMessage" runat="server"></asp:Label>
             </td>
+            <td>
+                &nbsp;</td>
         </tr>
     </table>
     <p class="auto-style11">
