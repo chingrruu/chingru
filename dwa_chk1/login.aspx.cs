@@ -71,7 +71,7 @@ namespace dwa_chk1
         public static string getParentPass(string loginID)
         {
             string pw = "";
-            string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTC"]);
+            string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"]);
             SqlConnection conn = new SqlConnection(strConn);
             SqlCommand cmd = new SqlCommand("SELECT PPassword from Parent WHERE PEmailAddr='" + loginID + "' ", conn);
             conn.Open();
@@ -87,7 +87,7 @@ namespace dwa_chk1
         public static int getParentID(string loginID)
         {
             int id = 0;
-            string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTC"]);
+            string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"]);
             SqlConnection conn = new SqlConnection(strConn);
             SqlCommand cmd = new SqlCommand("SELECT ParentID from Parent WHERE PEmailAddr='" + loginID + "' ", conn);
             conn.Open();

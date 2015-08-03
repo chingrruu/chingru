@@ -47,7 +47,7 @@ namespace dwa_chk1
 
         public int addDiscussionTopic()
         {
-            string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTC"]);
+            string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"]);
 
             SqlConnection conn = new SqlConnection(strConn);
 

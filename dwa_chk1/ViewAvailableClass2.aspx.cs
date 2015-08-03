@@ -14,7 +14,7 @@ namespace dwa_chk1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTC"]);
+            string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"]);
 
 
             SqlConnection conn = new SqlConnection(strConn);

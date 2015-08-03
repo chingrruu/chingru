@@ -22,8 +22,8 @@ namespace dwa_chk1
 
     public int add()
     {
-        
-        string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTC"].ToString());
+
+        string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"].ToString());
 
         SqlConnection conn = new SqlConnection(strConn);
 
