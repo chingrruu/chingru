@@ -4,6 +4,7 @@
 
         .auto-style11 {
             text-align: left;
+            height: 208px;
         }
         .auto-style3 {
             width: 823px;
@@ -29,11 +30,15 @@
         .auto-style18 {
             width: 331%;
         }
+        .auto-style19 {
+            width: 823px;
+            height: 206px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <p class="auto-style11">
-        <img alt="" class="auto-style3" src="Images/NP%20Tution%20Centre%20Logo.JPG" /></p>
+        <img alt="" class="auto-style19" src="Images/NP%20Tution%20Centre%20Logo.JPG" /></p>
     <p>
         <table cellpadding="0" cellspacing="0" class="auto-style6">
             <tr>
