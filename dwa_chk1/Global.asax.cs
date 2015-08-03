@@ -40,7 +40,7 @@ namespace dwa_chk1
         protected void Session_End(object sender, EventArgs e)
         {
             Application.Lock();
-            Application["CU"] = Convert.ToInt32(Application["CU"]) -1;
+            Application["CU"] = Convert.ToInt32(Application["CU"]) - 1;
             Application.UnLock();
         }
 
