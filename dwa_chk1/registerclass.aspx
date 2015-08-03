@@ -85,12 +85,6 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style17">Tutor ID</td>
-            <td class="auto-style15">
-                <asp:Label ID="lblTutorID" runat="server"></asp:Label>
-            </td>
-        </tr>
-        <tr>
             <td class="auto-style17">
                 <asp:Button ID="btnBack" runat="server" Text="Back" OnClick="btnBack_Click" />
             </td>
@@ -101,6 +95,8 @@
         <tr>
             <td colspan="2">
                 <asp:Label ID="lblMessage" runat="server"></asp:Label>
+            &nbsp;TutorID:
+                <asp:Label ID="lblTutorID" runat="server"></asp:Label>
             </td>
         </tr>
     </table>

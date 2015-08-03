@@ -22,30 +22,18 @@ namespace dwa_chk1
 
         public int add()
         {
-            // Read connection with NPTCConnectionString
             string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"]);
-
             SqlConnection conn = new SqlConnection(strConn);
-
             SqlCommand cmd = new SqlCommand("INSERT INTO TUITIONCLASS([Subject], Term, StartDate, [DayOfWeek], TimeSlot, Classroom) Values(@subject,@term,@startdate,@dayofweek,@timeslot,@classroom)", conn);
-            // the values for the query are determined during run-time hence we only give
-            // parameters here
 
-            // cmd.Parameters.AddWithValue("@classid", classid);
-            cmd.Parameters.AddWithValue("@subject", subject);
             cmd.Parameters.AddWithValue("@term", term);
             cmd.Parameters.AddWithValue("@startdate", startdate);
             cmd.Parameters.AddWithValue("@dayofweek", dayofweek);
             cmd.Parameters.AddWithValue("@timeslot", timeslot);
             cmd.Parameters.AddWithValue("@classroom", classroom);
 
-            // Open connection to database
             conn.Open();
-
-            // ExecuteNonQuery is used for INSERT, UPDATE, DELETE SQL statements
             cmd.ExecuteNonQuery();
-
-            // Close connection to database
             conn.Close();
 
             // Return 2 when no error occurs
@@ -66,7 +54,9 @@ namespace dwa_chk1
         {
             string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"]);
             SqlConnection conn = new SqlConnection(strConn);
-            SqlCommand cmd = new SqlCommand("Update TuitionClass SET TutorID=null WHERE TuitionClassID=@TuitionClassID", conn);
+            SqlCommand cmd = new SqlCommand("Update TuitionClass SET TutorID=1 WHERE TuitionClassID=@TuitionClassID", conn);
+            cmd.Parameters.AddWithValue("@tutorid", 1);
+            cmd.Parameters.AddWithValue("@TuitionClassID", tuitionClassID);
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();

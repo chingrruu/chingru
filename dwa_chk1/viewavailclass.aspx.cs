@@ -26,13 +26,12 @@ namespace dwa_chk1
             conn.Open();
             daClass.Fill(ds, "TuitionClassDetails");
             conn.Close();
-
             gvTC.DataSource = ds.Tables["TuitionClassDetails"];
             gvTC.DataBind();
 
             if (ds.Tables["TuitionClassDetails"].Rows.Count > 0)
             {
-                lblMessage.Text = " There are a total number of:" + ds.Tables["TuitionClassDetails"].Rows.Count + "  classes.";
+                lblMessage.Text = " There are a total number of:" + ds.Tables["TuitionClassDetails"].Rows.Count + "  available classes.";
             }
             else
             {

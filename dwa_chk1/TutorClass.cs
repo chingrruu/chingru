@@ -66,9 +66,7 @@ namespace dwa_chk1
         public int delete()
         {
             string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"]);
-
             SqlConnection conn = new SqlConnection(strConn);
-
             SqlCommand cmd = new SqlCommand("DELETE FROM TuitionClass WHERE TutorID=@tutorid", conn);
             cmd.Parameters.AddWithValue("@tutorid", tutorid);
             conn.Open();

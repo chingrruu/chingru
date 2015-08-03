@@ -21,12 +21,21 @@ namespace dwa_chk1
         {
             TuitionClass objTuitionClass = new TuitionClass();
             objTuitionClass.tuitionClassID = Convert.ToInt32(Request.QueryString["tuitionClassID"]);
-            int errorcode = objTuitionClass.delete();
 
-            if (errorcode == 0)
-                lblMessage.Text = "Class succesfully deregistered.";
-            if (errorcode == 1)
-                lblMessage.Text = "Class is not deregister.";
+            string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"]);
+            SqlConnection conn = new SqlConnection(strConn);
+            SqlCommand cmd = new SqlCommand("Update TuitionClass Set TutorID=Null WHERE TuitionClassID=@TuitionClassID", conn);
+            cmd.Parameters.AddWithValue("@TuitionClassID", Request.QueryString["tuitionClassID"]);
+            SqlDataAdapter daClass = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            conn.Open();
+            daClass.Fill(ds, "TuitionClass");
+            conn.Close();
+
+    
+                lblMessage.Text = "Tuition Class is succesfully deregistered.";
+            
+          
         }
 
         protected void btnNo_Click(object sender, EventArgs e)
