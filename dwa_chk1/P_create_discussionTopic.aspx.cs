@@ -53,7 +53,7 @@ namespace dwa_chk1
                     ddlTClass.DataTextField = "tuitionClassID";
                     ddlTClass.DataBind();
 
-                    ddlTName.SelectedValue = Convert.ToString(objTutor.TName);
+                    ddlTName.SelectedValue = Convert.ToString(objTutor.name);
                     ddlTClass.SelectedValue = Convert.ToString(objTuitionClass.tuitionClassID);
                 }
 
@@ -69,18 +69,17 @@ namespace dwa_chk1
                     txtText.Text = Request.QueryString["Text"];
                 }
             }
+        }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
           {
               if (Page.IsValid)
               {
-                Create a new object from ClassStudent Class
                 ClassStudent objClassStudent = new ClassStudent();
             
                 objClassStudent.classStudentID = Convert.ToInt32(txtStudentID.Text);
                 objClassStudent.tuitionClassID = Convert.ToInt32(ddlTClass.SelectedValue);
 
-                DiscussionTopic Class
                 DiscussionTopic objDiscussionTopic = new DiscussionTopic();
 
                 DataSet ds = new DataSet();
@@ -95,6 +94,11 @@ namespace dwa_chk1
                    lblMessage.Text = "All entries and selections must be entered before submission.";
 
             }
+        }
+
+        private void Class()
+        {
+            throw new NotImplementedException();
         }
     }
 }

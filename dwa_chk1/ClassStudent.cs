@@ -155,6 +155,12 @@ namespace dwa_chk1
                     dateCreated = Convert.ToDateTime(ds.Tables["getClassStudentDetails"].Rows[0]["dateCreated"]);
 
         }
+            else
+            {
+                return 100;
+            }
+           
+            
 }
        
     
