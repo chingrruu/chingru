@@ -29,10 +29,10 @@ namespace dwa_chk1
 
                 if (errorcode == 0)
                 {
-                    lblMessage.Text = "Your feedback has been successfully submitted.";
+                    lblMessage.Text = "Feedback must be entered before submission.";
                 }
                 else
-                    lblMessage.Text = "Feedback must be entered before submission.";
+                    lblMessage.Text = "Your feedback has been successfully submitted.";
 
             }
         }

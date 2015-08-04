@@ -47,7 +47,7 @@ namespace dwa_chk1
                 objTC.timeslot = lblTimeSlot.Text;
                 objTC.numsession = Convert.ToInt32(lblNumSession.Text);
                 objTC.classroom = lblClassroom.Text;
-
+                objTC.tuitionClassID = Convert.ToInt32(lblClassID.Text);
                 int errorcheck = objTC.update();
                 if (errorcheck == 100)
                     lblMessage.Text = "Thank You! You have successfully register the class.";
