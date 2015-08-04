@@ -13,15 +13,6 @@ namespace dwa_chk1 {
     public partial class deregisterclass {
         
         /// <summary>
-        /// ddlTC control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTC;
-        
-        /// <summary>
         /// gvCT control.
         /// </summary>
         /// <remarks>

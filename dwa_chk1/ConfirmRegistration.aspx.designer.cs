@@ -10,79 +10,88 @@
 namespace dwa_chk1 {
     
     
-    public partial class registerclass {
+    public partial class WebForm2 {
         
         /// <summary>
-        /// lblClassID control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblClassID;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblSubject control.
+        /// lnkMainPage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSubject;
+        protected global::System.Web.UI.WebControls.HyperLink lnkMainPage;
         
         /// <summary>
-        /// lblTerm control.
+        /// lblSalutation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTerm;
+        protected global::System.Web.UI.WebControls.Label lblSalutation;
         
         /// <summary>
-        /// lblStartDate control.
+        /// lblName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStartDate;
+        protected global::System.Web.UI.WebControls.Label lblName;
         
         /// <summary>
-        /// lblDayOfWeek control.
+        /// lblTelNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDayOfWeek;
+        protected global::System.Web.UI.WebControls.Label lblTelNo;
         
         /// <summary>
-        /// lblTimeSlot control.
+        /// lblEmailAddr control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTimeSlot;
+        protected global::System.Web.UI.WebControls.Label lblEmailAddr;
         
         /// <summary>
-        /// lblNumSession control.
+        /// lblPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNumSession;
+        protected global::System.Web.UI.WebControls.Label lblPassword;
         
         /// <summary>
-        /// lblClassroom control.
+        /// lblConfirmPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblClassroom;
+        protected global::System.Web.UI.WebControls.Label lblConfirmPassword;
+        
+        /// <summary>
+        /// lblAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAddress;
         
         /// <summary>
         /// btnBack control.
@@ -112,12 +121,12 @@ namespace dwa_chk1 {
         protected global::System.Web.UI.WebControls.Label lblMessage;
         
         /// <summary>
-        /// lblTutorID control.
+        /// lblMessage2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTutorID;
+        protected global::System.Web.UI.WebControls.Label lblMessage2;
     }
 }

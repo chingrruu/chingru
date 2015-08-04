@@ -19,7 +19,7 @@ namespace dwa_chk1
 
         private void displayRegisteredClass()
         {
-            string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTC"]);
+            string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"]);
 
 
             SqlConnection conn = new SqlConnection(strConn);

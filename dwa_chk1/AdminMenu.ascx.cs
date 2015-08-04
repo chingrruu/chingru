@@ -13,5 +13,15 @@ namespace dwa_chk1
         {
 
         }
+
+        protected void menuHome_MenuItemClick(object sender, MenuEventArgs e)
+        {
+            if (e.Item.Value == "- Logout")
+            {
+                // Redirect to login page if user click - logout from the menu
+                Session.Abandon();
+                Response.Redirect("Index.html");
+            }
+        }
     }
 }

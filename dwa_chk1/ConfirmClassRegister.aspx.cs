@@ -15,26 +15,14 @@ namespace dwa_chk1
         protected void Page_Load(object sender, EventArgs e)
         {
             lblClassid.Text = Request.QueryString["TuitionClassID"];
-            string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTC"]);
-
-
+            string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"]);
             SqlConnection conn = new SqlConnection(strConn);
-
-
             SqlCommand cmd = new SqlCommand("SELECT * From TuitionClass where TuitionClassID = @TuitionClass", conn);
             cmd.Parameters.AddWithValue("@TuitionClass", lblClassid.Text);
-
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-
             DataSet ds = new DataSet();
-
-
             conn.Open();
-
             da.Fill(ds, "TuitionClass");
-
-
             conn.Close();
 
             lblSubject.Text = Convert.ToString(ds.Tables["TuitionClass"].Rows[0]["Subject"]);
@@ -48,17 +36,11 @@ namespace dwa_chk1
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
-           
-            string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTC"]);
 
-
+            string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"]);
             SqlConnection conn = new SqlConnection(strConn);
-
-
             SqlCommand cmd = new SqlCommand("Insert into ClassStudent(StudentName, ParentID, TuitionClassID) values (@studentname, @parentid, @tuitionclassid)", conn);
-
            
-
             cmd.Parameters.AddWithValue("@tuitionclassid", lblClassid.Text);
             cmd.Parameters.AddWithValue("@parentid", Convert.ToInt32(Session["ParentID"]));
             cmd.Parameters.AddWithValue("@studentname", txtSname.Text);
@@ -71,9 +53,7 @@ namespace dwa_chk1
             conn.Close();
 
             Response.AddHeader("REFRESH", "5;URL=ViewRegisteredClass.aspx?");
-            
-            
-
+                  
         }
 
         protected void btnBack_Click(object sender, EventArgs e)

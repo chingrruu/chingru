@@ -10,11 +10,15 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <style type="text/css">
+        .auto-style1 {
+            width: 90%;
+        }
         .auto-style2 {
-            width: 346px;
+            width: 823px;
         }
         .auto-style3 {
-            width: 757px;
+            width: 823px;
+            height: 213px;
         }
     </style>
 </head>
@@ -23,7 +27,7 @@
     <div>
         <table align="center" class="auto-style1">
             <tr>
-                <td id="lnkMainPage" class="auto-style3">
+                <td id="lnkMainPage">
                     <asp:HyperLink ID="lnkMainPage" runat="server" Font-Bold="True" Font-Names="Imprint MT Shadow" Font-Size="40px" NavigateUrl="Main.aspx" ForeColor="#009933">NP Tuition Centre</asp:HyperLink>
                     <br />
                     <span class="auto-style2">Welcome, 
@@ -33,23 +37,29 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style3">
+                <td>
                     <uc3:AdminMenu ID="AdminMenu1" runat="server" />
                 </td>
             </tr>
             <tr>
-                <td class="auto-style3">
+                <td>
+                    <img class="auto-style3" src="Images/NP%20Tution%20Centre%20Logo.JPG" /> </td>
+            </tr>
+            <tr>
+                <td>
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
                 </td>
             </tr>
             <tr>
-                <td style="text-align: center" class="auto-style3">
+                <td style="text-align: center">
                     <asp:Label ID="lblTotalUsers" runat="server"></asp:Label>
                 </td>
             </tr>
         </table>
     </div>
+        <p>
+            &nbsp;</p>
     </form>
 </body>
 </html>

@@ -25,12 +25,7 @@
     <p>
         <img alt="" class="auto-style4" src="Images/NP%20Tution%20Centre%20Logo.JPG" /></p>
     <p>
-        Tuition Class ID:
-        <asp:DropDownList ID="ddlTC" runat="server" OnSelectedIndexChanged="ddlTC_SelectedIndexChanged" AutoPostBack="True" CssClass="auto-style101">
-        </asp:DropDownList>
-    </p>
-    <p class="auto-style102">
-        <strong>Tuition Class that have no students.</strong></p>
+        <span class="auto-style102"><strong>&nbsp;Displaying the </strong></span><strong>Tuition Class that have no students.</strong></p>
     <asp:GridView ID="gvCT" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="gvCT_SelectedIndexChanged" AllowPaging="True" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" PageSize="5" CssClass="auto-style101">
         <AlternatingRowStyle BackColor="#DCDCDC" />
         <Columns>

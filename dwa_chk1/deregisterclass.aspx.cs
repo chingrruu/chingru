@@ -19,16 +19,16 @@ namespace dwa_chk1
             {
                 string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"]);
                 SqlConnection conn = new SqlConnection(strConn);
-                SqlCommand cmd = new SqlCommand("Select tc.TuitionClassID, Subject, Term, DayOfWeek FROM TuitionClass tc WHERE tc.TuitionClassID NOT IN (SELECT tc.TuitionClassID from TuitionClass tc INNER JOIN ClassStudent cs ON tc.TuitionClassID = cs.TuitionClassID)", conn);
+                SqlCommand cmd = new SqlCommand("Select tc.TuitionClassID, Subject, Term, StartDate, DayOfWeek, TimeSlot, NumSession, Classroom FROM TuitionClass tc WHERE tc.TuitionClassID NOT IN (SELECT tc.TuitionClassID from TuitionClass tc INNER JOIN ClassStudent cs ON tc.TuitionClassID = cs.TuitionClassID) AND TutorID=@tutorid", conn);
+                cmd.Parameters.AddWithValue("@tutorid", 1);
                 SqlDataAdapter daClass = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 conn.Open();
                 daClass.Fill(ds, "TuitionClass");
                 conn.Close();
-                ddlTC.DataTextField = "TuitionClassID";
-                ddlTC.DataValueField = "TuitionClassID";
-                ddlTC.DataSource = ds.Tables["TuitionClass"];
-                ddlTC.DataBind();
+                
+                gvCT.DataSource = ds.Tables["TuitionClass"];
+                gvCT.DataBind();
             }
         }
 
@@ -39,13 +39,7 @@ namespace dwa_chk1
 
         protected void ddlTC_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int tuitionClassID = Convert.ToInt32(ddlTC.SelectedValue);
-            TuitionClass objTuitionClass = new TuitionClass();
-            objTuitionClass.tuitionClassID = tuitionClassID;
-            DataSet ds = new DataSet();
-            objTuitionClass.getTuitionDetails(ref ds);
-            gvCT.DataSource = ds.Tables["tuitionclassdetails"];
-            gvCT.DataBind();
+            
         }
 
         

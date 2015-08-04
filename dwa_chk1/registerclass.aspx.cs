@@ -18,7 +18,7 @@ namespace dwa_chk1
 
             string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"]);
             SqlConnection conn = new SqlConnection(strConn);
-            SqlCommand cmd = new SqlCommand("SELECT * FROM TuitionClass WHERE TuitionClassID= @TuitionClassID ORDER BY TuitionClassID", conn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM TuitionClass WHERE TuitionClassID=@TuitionClassID ORDER BY TuitionClassID", conn);
             cmd.Parameters.AddWithValue("@TuitionClassID", lblClassID.Text);
             SqlDataAdapter daClass = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -33,16 +33,13 @@ namespace dwa_chk1
             lblTimeSlot.Text = Convert.ToString(ds.Tables["TuitionClassDetails"].Rows[0]["TimeSlot"]);
             lblNumSession.Text = Convert.ToString(ds.Tables["TuitionClassDetails"].Rows[0]["NumSession"]);
             lblClassroom.Text = Convert.ToString(ds.Tables["TuitionClassDetails"].Rows[0]["Classroom"]);
-            lblTutorID.Text = "5";
-            
+            lblTutorID.Text = "1";
         }
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
-            if(Page.IsValid)
-            {
                 TuitionClass objTC = new TuitionClass();
-
+                objTC.tutorid = 1;
                 objTC.subject = lblSubject.Text;
                 objTC.term = lblTerm.Text;
                 objTC.startdate = Convert.ToDateTime(lblStartDate.Text);
@@ -50,11 +47,10 @@ namespace dwa_chk1
                 objTC.timeslot = lblTimeSlot.Text;
                 objTC.numsession = Convert.ToInt32(lblNumSession.Text);
                 objTC.classroom = lblClassroom.Text;
-                objTC.tutorid = Convert.ToInt32(lblTutorID.Text);
 
-                lblMessage.Text = "Thank You! You have successfully register the class.";  
-                 
-            }
+                int errorcheck = objTC.update();
+                if (errorcheck == 100)
+                    lblMessage.Text = "Thank You! You have successfully register the class.";
             
         }
 
