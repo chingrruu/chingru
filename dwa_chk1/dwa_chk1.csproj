@@ -69,6 +69,7 @@
     <Content Include="Admin.Master" />
     <Content Include="AdminViewClass.aspx" />
     <Content Include="ConfirmClassRegister.aspx" />
+    <Content Include="ConfirmRegistration.aspx" />
     <Content Include="confirmupdatetutorinfo.aspx" />
     <Content Include="deregisterclass.aspx" />
     <Content Include="deregisterclass2.aspx" />
@@ -179,6 +180,13 @@
     </Compile>
     <Compile Include="ConfirmClassRegister.aspx.designer.cs">
       <DependentUpon>ConfirmClassRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmRegistration.aspx.cs">
+      <DependentUpon>ConfirmRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfirmRegistration.aspx.designer.cs">
+      <DependentUpon>ConfirmRegistration.aspx</DependentUpon>
     </Compile>
     <Compile Include="confirmupdatetutorinfo.aspx.cs">
       <DependentUpon>confirmupdatetutorinfo.aspx</DependentUpon>
