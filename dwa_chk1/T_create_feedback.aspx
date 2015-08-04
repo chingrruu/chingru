@@ -71,6 +71,11 @@
             <tr>
                 <td class="auto-style7">
                     <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
+                    <asp:RequiredFieldValidator ID="rfvFeedback" runat="server" ControlToValidate="txtFeedback" Display="Dynamic" ErrorMessage="Feedback field cannot be blank" ForeColor="Red"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style7">
                     <asp:Label ID="lblMessage" runat="server"></asp:Label>
                 </td>
             </tr>
