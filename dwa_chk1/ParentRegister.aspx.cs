@@ -65,5 +65,23 @@ namespace dwa_chk1
             }
         
         }
+
+        protected void cuvEmail_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (Page.IsValid)
+            {
+                parent objParent = new parent();
+
+                if (objParent.isEmailExists(txtEmailAddr.Text) == true)
+                {
+                    // force or raise an error by setting the IsValid property to false
+
+                    args.IsValid = false;
+                }
+
+                else
+                    args.IsValid = true;
+            }
+        }
     }
 }

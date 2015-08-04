@@ -82,7 +82,7 @@
             <td class="auto-style10">
                 <asp:TextBox ID="txtEmailAddr" runat="server" Width="128px"></asp:TextBox>
                 <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmailAddr" Display="Dynamic" ErrorMessage="Please specify a valid email" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-                <asp:CustomValidator ID="cuvEmail" runat="server" ControlToValidate="txtEmailAddr" Display="Dynamic" ErrorMessage="Email has been used!" ForeColor="Red"></asp:CustomValidator>
+                <asp:CustomValidator ID="cuvEmail" runat="server" ControlToValidate="txtEmailAddr" Display="Dynamic" ErrorMessage="Email has been used!" ForeColor="Red" OnServerValidate="cuvEmail_ServerValidate"></asp:CustomValidator>
             </td>
         </tr>
         <tr>

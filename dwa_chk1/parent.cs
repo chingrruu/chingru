@@ -47,5 +47,30 @@ namespace dwa_chk1
             
     
     }
+
+    public bool isEmailExists(string PEmailAddr)
+    {
+        string strConn = Convert.ToString(ConfigurationManager.ConnectionStrings["NPTCConnectionString"].ToString());
+
+        SqlConnection conn = new SqlConnection(strConn);
+
+        SqlCommand cmd = new SqlCommand("Select * from parent where PEmailAddr = @PEmailAddr", conn);
+
+
+        cmd.Parameters.AddWithValue("@PEmailAddr", PEmailAddr);
+
+        SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+        DataSet ds = new DataSet();
+
+        conn.Open();
+        da.Fill(ds, "parent");
+        conn.Close();
+
+        if (ds.Tables["parent"].Rows.Count > 0)
+            return true; // email exists
+        else
+            return false;
+    }
 }
 }
